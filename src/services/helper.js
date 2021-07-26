@@ -1,4 +1,4 @@
-export async function callAPI(lat, long) {
+export async function callAPI(lat=0, long=0) {
   const getAPILocation = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=4ad98682883ede3d088095d90aaf6a65`);
   const getAPILocationJson = await getAPILocation.json();
   const getAPIName = await fetch(`http://api.openweathermap.org/data/2.5/forecast?id=524901&q=${getAPILocationJson.name}&appid=4ad98682883ede3d088095d90aaf6a65`);

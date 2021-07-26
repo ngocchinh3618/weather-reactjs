@@ -26,6 +26,11 @@ class App extends Component {
       this.setState({data: await callAPI(latitude, longtiude)});
     else 
       this.setState({data: await callAPI()});
+
+
+      
+    setInterval(this.btnCurrent, 1800000);
+    
   }
 
 
