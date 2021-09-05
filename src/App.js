@@ -45,7 +45,23 @@ class App extends Component {
 
    btnChange(e){
     // console.log(e.target);
-    this.setState({[e.target.name]: e.target.value});
+    if(e.target.name == "lat"){
+      if(e.target.value >= -90 & e.target.value <= 90){
+        this.setState({[e.target.name]: e.target.value});
+      }
+      else{
+        alert("Range from -90 to 90 for latitude.")
+      }
+    }
+    else if(e.target.name == "long"){
+      if(e.target.value >= -180 & e.target.value <= 180){
+        this.setState({[e.target.name]: e.target.value});
+      }
+      else{
+        alert("Range from -180 to 180 for longitude.")
+      }
+    }
+    
     
     // this.setState({data:callAPI(state.lat, state.long)});
   }
